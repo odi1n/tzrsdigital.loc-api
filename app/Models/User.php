@@ -10,7 +10,6 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-
     use HasApiTokens, Notifiable;
 
     /**
@@ -19,8 +18,11 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name',
+        'last_name',
+        'first_name',
+        'patronymic',
         'email',
+        'phone',
         'password',
     ];
 
@@ -29,8 +31,4 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
 }

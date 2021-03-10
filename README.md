@@ -1,62 +1,101 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400">
+    </a>
 </p>
 
-## About Laravel
+### Тестовое задание. Сделать api на laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Скачать проект 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+2. Открыть через консоль
+    ```php
+    cd tzrsdigital.loc-api
+    ```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+3. Произвести миграцию
+    ```php
+    php artisan migrate
+    ```
 
-## Learning Laravel
+4. Создание ключей passport
+    ```php
+    php artisan passport:install
+    ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Регистрация:
+Ссылка: [http://localhost:8000/api/register](http://localhost:8000/api/register)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+POST - запрос. Принимаемые параметры:
+```php
+last_name=Иван
+first_name=Петров
+patronymic=Яковлев
+email=test@mail.ru
+phone=+79999999999
+password=Tests1000#
+password_confirm=Tests1000#
+```
+- Успешно - 200
+```json
+{
+    "success": true,
+    "data": {
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2IyOTIyZDBmYTFjODc4MGUwMWVlYTA0ZTU2YjZlYjg2ZThhZGQ3YjA2ODUwMWZlMGRhZWQ4YjA0N2I4NmQ3N2UwNTY5YjM4MzFiNTFkNjQiLCJpYXQiOiIxNjE1MzkwOTI0Ljk1NzU0NiIsIm5iZiI6IjE2MTUzOTA5MjQuOTU3NTQ4IiwiZXhwIjoiMTY0NjkyNjkyNC45NTMxNzUiLCJzdWIiOiIxMCIsInNjb3BlcyI6W119.nv1khECM5lRawYwnRcMXgNk59v6mOWTbpcQgxbYO1SOzUKoAbgFdV2BbTND74oQZCsRfyU6_9BNKDr0BVRiFqiuESNWELSGZDGb0M4ZJmpiAf2tqdtHteDqFmkHTRj2DrHxzLl1fRZ8ZHdxgegmWB4O4C9eKSPOxBfpgoaM8YH1HGrQHPQdhY2ojODdPK5HCbYCvi2bAcknNJDj4xxQRzk8v_laEVREPi3AR2itp90EfeiJHodmigryePjP4kykDuZNYHuDxKc_EGYhvuNBEXB_G99ASrRHiUM7CW_422Ji8665CgAeKlpZSwViCNOQGfj-3aoYvZpGSC6yOvBwTDeKSkqkZolHkuSqy5RHDEEkClNJezUAee6AsvDFPcXdigEM4Xtrmu-BupAJt32WUXkSIfBNWW2bvXnC2buldTWjuMN0qNvaFnHWcBo4VNQa1J36Ffpeiv5fL3SvKdbJxUpXupzv8oC5KyxSMFEFtk6vt9TFHIBkDWtmMN_c7iOoF7OudHBbRHS7UebqHKD333Mo0tSYvgBWQRKuWbOoxnEX487qjxMxfgMS172_A8PIGmPKz-DdVbOcEloTgzCOgzuVfPneSf5UNH6_uq_2GE0XPbDWMjFxN2_BDT6qKEk1I6NsQkdfghxdyHZRVW_18zQCNVdcMzPfol9eEkKEdK9U",
+        "name": null
+    },
+    "message": "User register successfully."
+}
+```
+- Ошибка - 404 
+```json
+{
+    "success": false,
+    "message": "Validation Error.",
+    "data": {
+        "email": [
+            "The email has already been taken."
+        ]
+    }
+}
+```
 
-## Laravel Sponsors
+#### Авторизация:
+Ссылка: [http://localhost:8000/api/login](http://localhost:8000/api/login)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+POST - запрос. Принимаемые параметры:
+```php
+email=test@mail.ru
+password=Tests1000#
+```
+или
+```php
+phone=+79999999999
+password=Tests1000#
+```
 
-### Premium Partners
+- Ответ - 200
+```json
+{
+    "success": true,
+    "data": {
+        "id": 10,
+        "last_name": "tests",
+        "first_name": "tests",
+        "patronymic": "tests",
+        "email": "dx2ss22x@gmail.com",
+        "phone": "+79913279299",
+        "created_at": "2021-03-10T15:42:04.000000Z",
+        "updated_at": "2021-03-10T15:42:04.000000Z"
+    },
+    "message": "Авторизация удалась"
+}
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Ошибка - 404
+```json
+{
+    "success": false,
+    "message": "Авторизация не удалась"
+}
+```
