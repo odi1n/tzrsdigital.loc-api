@@ -4,8 +4,9 @@
     </a>
 </p>
 
-### Тестовое задание. Сделать api на laravel
+## Тестовое задание. Сделать api на laravel
 
+### Установка/Запуск
 1. Скачать проект 
 
 2. Открыть через консоль
@@ -23,10 +24,34 @@
     php artisan passport:install
     ```
 
-#### Регистрация:
-Ссылка: [http://localhost:8000/api/register](http://localhost:8000/api/register)
+### Список запросов
+Ссылка: [http://localhost:8000/api/](http://localhost:8000/api/)
 
-POST - запрос. Принимаемые параметры:
+|№|Ссыка|Название|Запрос|
+|:---|:---|:---|:---:|
+|1|[/register](#регистрация-параметры)|Регистрация|POST|
+|2|[/login](#авторизация-параметры)|Авторизация|POST|
+|3|/products|Получить все продукты|GET|
+|4|/products|Добавить новый продукт|POST|
+|5|/products/{idProduct}|Получить информацию о продукте|GET|
+|6|/products/{idProduct}|Обновить информацию продука|PUTH/UPDATE|
+|7|/products/{idProduct}|Удалить продукт|POST|
+|8|/catalogs|Получить все каталоги|GET|
+|9|/catalogs|Добавить новый каталог|POST|
+|10|/catalogs/{idCatalog}|Получить информацию о каталоге|GET|
+|11|/catalogs/{idCatalog}|Обновить информацию каталога|PUTH/UPDATE|
+|12|/catalogs/{idCatalog}|Удалить каталог|POST|
+
+Начиная с 3го пункта требуется передавать Header:
+```php
+Authorization: Bearer KEY
+Accept: application/json
+```
+
+Пример запроса:
+http://localhost:8000/api/login
+
+#### Регистрация - параметры:
 ```php
 last_name=Иван
 first_name=Петров
@@ -36,34 +61,8 @@ phone=+79999999999
 password=Tests1000#
 password_confirm=Tests1000#
 ```
-- Успешно - 200
-```json
-{
-    "success": true,
-    "data": {
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2IyOTIyZDBmYTFjODc4MGUwMWVlYTA0ZTU2YjZlYjg2ZThhZGQ3YjA2ODUwMWZlMGRhZWQ4YjA0N2I4NmQ3N2UwNTY5YjM4MzFiNTFkNjQiLCJpYXQiOiIxNjE1MzkwOTI0Ljk1NzU0NiIsIm5iZiI6IjE2MTUzOTA5MjQuOTU3NTQ4IiwiZXhwIjoiMTY0NjkyNjkyNC45NTMxNzUiLCJzdWIiOiIxMCIsInNjb3BlcyI6W119.nv1khECM5lRawYwnRcMXgNk59v6mOWTbpcQgxbYO1SOzUKoAbgFdV2BbTND74oQZCsRfyU6_9BNKDr0BVRiFqiuESNWELSGZDGb0M4ZJmpiAf2tqdtHteDqFmkHTRj2DrHxzLl1fRZ8ZHdxgegmWB4O4C9eKSPOxBfpgoaM8YH1HGrQHPQdhY2ojODdPK5HCbYCvi2bAcknNJDj4xxQRzk8v_laEVREPi3AR2itp90EfeiJHodmigryePjP4kykDuZNYHuDxKc_EGYhvuNBEXB_G99ASrRHiUM7CW_422Ji8665CgAeKlpZSwViCNOQGfj-3aoYvZpGSC6yOvBwTDeKSkqkZolHkuSqy5RHDEEkClNJezUAee6AsvDFPcXdigEM4Xtrmu-BupAJt32WUXkSIfBNWW2bvXnC2buldTWjuMN0qNvaFnHWcBo4VNQa1J36Ffpeiv5fL3SvKdbJxUpXupzv8oC5KyxSMFEFtk6vt9TFHIBkDWtmMN_c7iOoF7OudHBbRHS7UebqHKD333Mo0tSYvgBWQRKuWbOoxnEX487qjxMxfgMS172_A8PIGmPKz-DdVbOcEloTgzCOgzuVfPneSf5UNH6_uq_2GE0XPbDWMjFxN2_BDT6qKEk1I6NsQkdfghxdyHZRVW_18zQCNVdcMzPfol9eEkKEdK9U",
-        "name": null
-    },
-    "message": "User register successfully."
-}
-```
-- Ошибка - 404 
-```json
-{
-    "success": false,
-    "message": "Validation Error.",
-    "data": {
-        "email": [
-            "The email has already been taken."
-        ]
-    }
-}
-```
 
-#### Авторизация:
-Ссылка: [http://localhost:8000/api/login](http://localhost:8000/api/login)
-
-POST - запрос. Принимаемые параметры:
+#### Авторизация - параметры:
 ```php
 email=test@mail.ru
 password=Tests1000#
@@ -72,30 +71,4 @@ password=Tests1000#
 ```php
 phone=+79999999999
 password=Tests1000#
-```
-
-- Ответ - 200
-```json
-{
-    "success": true,
-    "data": {
-        "id": 10,
-        "last_name": "tests",
-        "first_name": "tests",
-        "patronymic": "tests",
-        "email": "dx2ss22x@gmail.com",
-        "phone": "+79913279299",
-        "created_at": "2021-03-10T15:42:04.000000Z",
-        "updated_at": "2021-03-10T15:42:04.000000Z"
-    },
-    "message": "Авторизация удалась"
-}
-```
-
-- Ошибка - 404
-```json
-{
-    "success": false,
-    "message": "Авторизация не удалась"
-}
 ```

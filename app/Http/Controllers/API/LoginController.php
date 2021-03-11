@@ -27,6 +27,7 @@ class LoginController extends BaseController
         $checkAuth = Auth::attempt($formFields);
         if ($checkAuth) {
             $user = Auth::user();
+            $user['token'] = $user->createToken('MyApp')->accessToken;
             unset($user['password']);
             return $this->sendResponse($user, 'Авторизация удалась');
         }

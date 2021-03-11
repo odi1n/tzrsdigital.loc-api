@@ -19,7 +19,7 @@ class ProductController extends BaseController
     public function index()
     {
         $products = Product::all();
-        return $this->sendResponse($products->toArray(), 'Products retrieved successfully.');
+        return $this->sendResponse($products->toArray(), 'Все продукты успешно получены');
     }
     /**
      * Store a newly created resource in storage.
@@ -38,7 +38,7 @@ class ProductController extends BaseController
             return $this->sendError('Validation Error.', $validator->errors());
         }
         $product = Product::create($input);
-        return $this->sendResponse($product->toArray(), 'Product created successfully.');
+        return $this->sendResponse($product->toArray(), 'Продукт успешно добавлен');
     }
     /**
      * Display the specified resource.
@@ -52,7 +52,7 @@ class ProductController extends BaseController
         if (is_null($product)) {
             return $this->sendError('Product not found.');
         }
-        return $this->sendResponse($product->toArray(), 'Product retrieved successfully.');
+        return $this->sendResponse($product->toArray(), 'Продукт успешно получен');
     }
     /**
      * Update the specified resource in storage.
@@ -74,7 +74,7 @@ class ProductController extends BaseController
         $product->name = $input['name'];
         $product->detail = $input['detail'];
         $product->save();
-        return $this->sendResponse($product->toArray(), 'Product updated successfully.');
+        return $this->sendResponse($product->toArray(), 'Продукт успешно изменен');
     }
     /**
      * Remove the specified resource from storage.
@@ -85,6 +85,6 @@ class ProductController extends BaseController
     public function destroy(Product $product)
     {
         $product->delete();
-        return $this->sendResponse($product->toArray(), 'Product deleted successfully.');
+        return $this->sendResponse($product->toArray(), 'Продукт удален');
     }
 }
