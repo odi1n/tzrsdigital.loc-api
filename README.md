@@ -23,14 +23,30 @@
     ```php
     php artisan passport:install
     ```
+5. Фейковые данные:
+
+    Каталоги
+    ```php
+    php artisan db:seed CatalogTableSeeder
+    ```
+   
+   Свойства
+   ```php
+    php artisan db:seed PropertyTableSeeder
+    ```
+   
+   Продукты
+   ```php
+    php artisan db:seed ProductTableSeeder
+    ```
 
 ### Список запросов
 Ссылка: [http://localhost:8000/api/](http://localhost:8000/api/)
 
 |№|Ссыка|Название|Запрос|
 |:---|:---|:---|:---:|
-|1|[/register](#регистрация-параметры)|Регистрация|POST|
-|2|[/login](#авторизация-параметры)|Авторизация|POST|
+|1|[/register](#регистрация---параметры)|Регистрация|POST|
+|2|[/login](#авторизация---параметры)|Авторизация|POST|
 |3|/products|Получить все продукты|GET|
 |4|/products|Добавить новый продукт|POST|
 |5|/products/{idProduct}|Получить информацию о продукте|GET|
