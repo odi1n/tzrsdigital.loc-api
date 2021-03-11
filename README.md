@@ -54,9 +54,9 @@
 |7|/products/{idProduct}|Удалить продукт|POST|
 |8|/catalogs|Получить все каталоги|GET|
 |9|/catalogs|Добавить новый каталог|POST|
-|10|/catalogs/{idCatalog}|Получить информацию о каталоге|GET|
-|11|/catalogs/{idCatalog}|Обновить информацию каталога|PUTH/UPDATE|
-|12|/catalogs/{idCatalog}|Удалить каталог|POST|
+|10|[/catalogs/{idCatalog}](#каталог---параметры)|Получить информацию о каталоге|GET|
+|11|[/catalogs/{idCatalog}](#каталог---параметры)|Обновить информацию каталога|PUTH/UPDATE|
+|12|[/catalogs/{idCatalog}](#каталог---параметры)|Удалить каталог|POST|
 
 Начиная с 3го пункта требуется передавать Header:
 ```php
@@ -68,23 +68,24 @@ Accept: application/json
 http://localhost:8000/api/login
 
 #### Регистрация - параметры:
-```php
-last_name=Иван
-first_name=Петров
-patronymic=Яковлев
-email=test@mail.ru
-phone=+79999999999
-password=Tests1000#
-password_confirm=Tests1000#
-```
+|Параметр|Важно|Значение|Данные|
+|:---|:---|:---|:---|
+|last_name|+|Иванов|Имя|
+|first_name|+|Иван|Фамилия|
+|patronymic|+|Иванович|Отчество|
+|email|+|test@gmail.com|Почта|
+|phone|+|+79999999999|Телефон|
+|password|+|Tests1000#|Пароль|
+|password_confirm|+|Tests1000#|Подтвердить пароль|
 
 #### Авторизация - параметры:
-```php
-login=test@mail.ru
-password=Tests1000#
-```
-или
-```php
-login=+79999999999
-password=Tests1000#
-```
+|Параметр|Важно|Значение|Данные|
+|:---|:---|:---|:---|
+|login|+|email/phone|Логин|
+|password|+|Tests1000#|Пароль|
+
+
+#### Каталог - параметры:
+|Параметр|Важно|Значение|Данные|
+|:---|:---|:---|:---|
+|title|+|Диван|Название|

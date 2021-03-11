@@ -182,7 +182,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615371301484</updated>
       <workItem from="1615371302524" duration="1608000" />
-      <workItem from="1615375446876" duration="42516000" />
+      <workItem from="1615375446876" duration="42940000" />
     </task>
     <task id="LOCAL-00001" summary="еуые">
       <created>1615371322467</created>
@@ -226,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615500142600</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Поправил README.md">
+      <created>1615500274894</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615500274894</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +257,8 @@
     <MESSAGE value="Сделана:&#10;- регистрация&#10;- авторизация&#10;app.php изменил локализацию фейкера" />
     <MESSAGE value="api.php&#10;- добавлена ссылка для работы с каталогами&#10;LoginController.php - при авторизации выводим ключ&#10;ProductController.php - успешная работа на русском&#10;Добавлен:&#10;- миграция каталога&#10;- catalog.php&#10;- CatalogController.php&#10;Изменил Read.me" />
     <MESSAGE value="Созданы:&#10;- каталог&#10;- свойства&#10;- список свойств&#10;api.php - добавлены свойства&#10;Catalog.php - не нужно генерировать время&#10;CatalogController.php - поправил метод show&#10;Product.php - изменил fillable&#10;ProductController.php - поправил store, update&#10;Seeder&#10;- CatalogTableSeeder.php&#10;- ProductTableSeeder.php&#10;- PropertyTableSeeder.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Созданы:&#10;- каталог&#10;- свойства&#10;- список свойств&#10;api.php - добавлены свойства&#10;Catalog.php - не нужно генерировать время&#10;CatalogController.php - поправил метод show&#10;Product.php - изменил fillable&#10;ProductController.php - поправил store, update&#10;Seeder&#10;- CatalogTableSeeder.php&#10;- ProductTableSeeder.php&#10;- PropertyTableSeeder.php" />
+    <MESSAGE value="Поправил README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправил README.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="621" y="307" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615383413831">
@@ -273,10 +281,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1615382826003" />
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615500144283">
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615500276348">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615500144283" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615500276348" />
     <state x="657" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615377487324">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
