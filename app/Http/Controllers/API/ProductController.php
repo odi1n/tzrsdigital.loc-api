@@ -21,29 +21,36 @@ class ProductController extends BaseController
         $products = Product::all();
         return $this->sendResponse($products->toArray(), 'Все продукты успешно получены');
     }
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $input = $request->all();
         $validator = Validator::make($input, [
-            'name' => 'required',
-            'detail' => 'required'
+            'name' => ['required', 'string', 'unique:products'],
+            'description' => ['string'],
+            'price' => ['required', 'integer'],
+            'count' => ['required', 'integer'],
+            'catalogs_id' => ['required', 'integer'],
         ]);
-        if($validator->fails()){
+
+        if ($validator->fails()) {
             return $this->sendError('Validation Error.', $validator->errors());
         }
+
         $product = Product::create($input);
         return $this->sendResponse($product->toArray(), 'Продукт успешно добавлен');
     }
+
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -54,32 +61,42 @@ class ProductController extends BaseController
         }
         return $this->sendResponse($product->toArray(), 'Продукт успешно получен');
     }
+
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Product $product)
     {
         $input = $request->all();
         $validator = Validator::make($input, [
-            'name' => 'required',
-            'detail' => 'required'
+            'name' => ['string', 'unique:products'],
+            'description' => ['string'],
+            'price' => ['integer'],
+            'count' => ['integer'],
+            'catalogs_id' => ['integer'],
         ]);
-        if($validator->fails()){
+
+        if ($validator->fails()) {
             return $this->sendError('Validation Error.', $validator->errors());
         }
+
         $product->name = $input['name'];
-        $product->detail = $input['detail'];
+        $product->description = $input['description'];
+        $product->price = $input['price'];
+        $product->count = $input['count'];
+        $product->catalogs_id = $input['catalogs_id'];
         $product->save();
         return $this->sendResponse($product->toArray(), 'Продукт успешно изменен');
     }
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Product $product)

@@ -50,14 +50,13 @@ class CatalogController extends BaseController
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Catalog  $catalog_id
+     * @param  \App\Models\Catalog  $catalog
      * @return \Illuminate\Http\Response
      */
-    public function show(Catalog $catalog_id)
+    public function show(Catalog $catalog)
     {
-        $catalog = Catalog::find($catalog_id);
         if (is_null($catalog) || $catalog->count() == 0) {
-            return $this->sendError('Product not found.');
+            return $this->sendError('Catalog not found.');
         }
         return $this->sendResponse($catalog->toArray(), 'Каталог успешно получен');
     }
