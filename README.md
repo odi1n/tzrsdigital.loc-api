@@ -80,11 +80,11 @@ password_confirm=Tests1000#
 
 #### Авторизация - параметры:
 ```php
-email=test@mail.ru
+login=test@mail.ru
 password=Tests1000#
 ```
 или
 ```php
-phone=+79999999999
+login=+79999999999
 password=Tests1000#
 ```
