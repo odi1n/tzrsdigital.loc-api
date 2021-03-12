@@ -13,6 +13,7 @@
     <list default="true" id="692fe65a-a797-45d3-a2cf-25782a1e4065" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/ProductTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ProductTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,8 +159,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tzrsdigital.loc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -182,7 +184,9 @@
       <option name="presentableId" value="Default" />
       <updated>1615371301484</updated>
       <workItem from="1615371302524" duration="1608000" />
-      <workItem from="1615375446876" duration="42940000" />
+      <workItem from="1615375446876" duration="43259000" />
+      <workItem from="1615559693497" duration="633000" />
+      <workItem from="1615562488306" duration="787000" />
     </task>
     <task id="LOCAL-00001" summary="еуые">
       <created>1615371322467</created>
@@ -233,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615500274894</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Поправил README.md">
+      <created>1615500690136</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615500690136</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +272,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Поправил README.md" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="466" y="183" key="#Inspections" timestamp="1615500796247">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="466" y="183" key="#Inspections/0.0.1680.1010@0.0.1680.1010" timestamp="1615500796247" />
     <state x="621" y="307" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615383413831">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -273,18 +288,22 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="585" y="225" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1615498599326" />
-    <state x="570" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615498972385">
+    <state x="570" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615563161566">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="570" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1615498972385" />
+    <state x="570" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1615563161566" />
     <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1615382826003">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1615382826003" />
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615500276348">
+    <state x="341" y="150" key="SettingsEditor" timestamp="1615559679162">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615500276348" />
+    <state x="341" y="150" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1615559679162" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615500691801">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615500691801" />
     <state x="657" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615377487324">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

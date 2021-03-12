@@ -25,19 +25,24 @@
     ```
 5. Фейковые данные:
 
-    Каталоги
+    Каталоги:
     ```php
     php artisan db:seed CatalogTableSeeder
     ```
    
-   Свойства
+   Свойства:
    ```php
     php artisan db:seed PropertyTableSeeder
     ```
    
-   Продукты
+   Продукты:
    ```php
     php artisan db:seed ProductTableSeeder
+    ```
+   
+   Сгенерировать свойства товара
+   ```php
+    php artisan db:seed PropertiesListSeeder
     ```
 
 ### Список запросов
