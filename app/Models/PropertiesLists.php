@@ -9,5 +9,11 @@ class PropertiesLists extends Model
 {
     use HasFactory;
 
+    public function get($product_id)
+    {
+        return PropertiesLists::where("product_id", $product_id)
+            ->get();
+    }
+
     public $timestamps = false;
 }

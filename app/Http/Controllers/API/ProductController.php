@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\PropertiesLists;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\Product;
@@ -16,10 +17,14 @@ class ProductController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(int $paginateCount = 40)
     {
         $products = Product::all();
-        return $this->sendResponse($products->toArray(), 'Все продукты успешно получены');
+        $productsNew = $products->toArray();
+        foreach ($productsNew as $key => $value) {
+            $productsNew[$key]['properties'] = (new \App\Models\PropertiesLists)->get($value['id']);
+        }
+        return $this->sendResponse($productsNew, 'Все продукты успешно получены');
     }
 
     /**

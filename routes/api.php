@@ -5,6 +5,7 @@ use App\Http\Controllers\API\LoginController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\PropertyController;
 use App\Http\Controllers\API\RegisterController;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

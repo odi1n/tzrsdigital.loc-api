@@ -40,7 +40,7 @@
     php artisan db:seed ProductTableSeeder
     ```
    
-   Сгенерировать свойства товара
+   Сгенерировать свойства продуктов
    ```php
     php artisan db:seed PropertiesListSeeder
     ```
