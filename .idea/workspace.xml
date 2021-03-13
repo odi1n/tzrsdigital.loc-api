@@ -14,10 +14,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/PropertiesListsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/PropertiesListsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/PropertiesListsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/PropertyController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PropertiesLists.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PropertiesLists.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PropertiesLists.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Property.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_11_203620_create_properties_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_11_203624_create_properties_lists_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/ProductTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ProductTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/PropertiesListSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/PropertyTableSeeder.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +196,8 @@
       <workItem from="1615371302524" duration="1608000" />
       <workItem from="1615375446876" duration="43259000" />
       <workItem from="1615559693497" duration="633000" />
-      <workItem from="1615562488306" duration="5403000" />
+      <workItem from="1615562488306" duration="10191000" />
+      <workItem from="1615586781822" duration="6826000" />
     </task>
     <task id="LOCAL-00001" summary="еуые">
       <created>1615371322467</created>
@@ -255,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615563330044</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="......">
+      <created>1615578098920</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615578098920</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +295,8 @@
     <MESSAGE value="Созданы:&#10;- каталог&#10;- свойства&#10;- список свойств&#10;api.php - добавлены свойства&#10;Catalog.php - не нужно генерировать время&#10;CatalogController.php - поправил метод show&#10;Product.php - изменил fillable&#10;ProductController.php - поправил store, update&#10;Seeder&#10;- CatalogTableSeeder.php&#10;- ProductTableSeeder.php&#10;- PropertyTableSeeder.php" />
     <MESSAGE value="Поправил README.md" />
     <MESSAGE value="Добавил генерацию фейковых данных для свойств" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил генерацию фейковых данных для свойств" />
+    <MESSAGE value="......" />
+    <option name="LAST_COMMIT_MESSAGE" value="......" />
   </component>
   <component name="WindowStateProjectService">
     <state x="466" y="183" key="#Inspections" timestamp="1615500796247">
@@ -300,10 +315,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="585" y="225" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1615498599326" />
-    <state x="570" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615571000854">
+    <state x="570" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615578455653">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="570" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1615571000854" />
+    <state x="570" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1615578455653" />
     <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1615565701856">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -312,10 +327,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="341" y="150" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1615559679162" />
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615563331980">
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615578100409">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615563331980" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615578100409" />
     <state x="657" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615377487324">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

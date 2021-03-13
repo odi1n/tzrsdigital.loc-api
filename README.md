@@ -42,7 +42,7 @@
    
    Сгенерировать свойства продуктов
    ```php
-    php artisan db:seed PropertiesListSeeder
+    php artisan db:seed PropertyTableSeeder
     ```
 
 ### Список запросов

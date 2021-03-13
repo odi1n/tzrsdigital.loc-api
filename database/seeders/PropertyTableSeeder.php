@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Catalog;
 use App\Models\Property;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
@@ -20,7 +19,8 @@ class PropertyTableSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             Property::create([
-                'title' => $faker->unique()->words(1, true),
+                'title' => $faker->words(1, true),
+                'value' => $faker->unique()->words(2, true),
             ]);
         }
     }

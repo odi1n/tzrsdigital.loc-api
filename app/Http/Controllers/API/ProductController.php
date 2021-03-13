@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\PropertiesLists;
+use App\Models\Property;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\Product;
@@ -19,12 +20,17 @@ class ProductController extends BaseController
      */
     public function index(int $paginateCount = 40)
     {
-        $products = Product::all();
-        $productsNew = $products->toArray();
-        foreach ($productsNew as $key => $value) {
-            $productsNew[$key]['properties'] = (new \App\Models\PropertiesLists)->get($value['id']);
+        $products = Product::paginate($paginateCount);
+
+        for($i = 0; $i < count($products);$i++){
+            $products[$i]->properties;
+            $products[$i]->catalogs;
         }
-        return $this->sendResponse($productsNew, 'Все продукты успешно получены');
+//        $test = Product::whereHas('catalogs', function ($q) use($ss) {
+//            $q->where('catalogs_id', '=', $ss);
+//        })->get();
+
+        return $this->sendResponse($products->toArray(), 'Все продукты успешно получены');
     }
 
     /**
@@ -64,6 +70,8 @@ class ProductController extends BaseController
         if (is_null($product)) {
             return $this->sendError('Product not found.');
         }
+        $product->properties;
+        $product->catalogs;
         return $this->sendResponse($product->toArray(), 'Продукт успешно получен');
     }
 
