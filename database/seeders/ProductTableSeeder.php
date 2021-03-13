@@ -20,6 +20,7 @@ class ProductTableSeeder extends Seeder
     {
         $faker = Factory::create();
         $catalogAll = Catalog::all();
+        $properties = Property::all();
 
         for ($i = 0; $i < 50; $i++) {
             $product = Product::create([
@@ -28,6 +29,12 @@ class ProductTableSeeder extends Seeder
                 'price' => $faker->randomNumber(4),
                 'count' => $faker->randomNumber(3),
                 'catalogs_id' => $faker->randomElement($catalogAll)['id'],
+            ]);
+
+            $product->properties()->attach([
+                $faker->randomElement($properties)['id'],
+                $faker->randomElement($properties)['id'],
+                $faker->randomElement($properties)['id'],
             ]);
         }
     }

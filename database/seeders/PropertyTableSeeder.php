@@ -16,11 +16,12 @@ class PropertyTableSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create();
+        $title = ['Размер', 'Вес', 'Диагональ', 'Тип', 'Мощность'];
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             Property::create([
-                'title' => $faker->words(1, true),
-                'value' => $faker->unique()->words(2, true),
+                'title' => $faker->randomElement($title),
+                'value' => $faker->words(2, true),
             ]);
         }
     }

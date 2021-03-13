@@ -85,16 +85,4 @@ class CatalogController extends BaseController
         $catalog->save();
         return $this->sendResponse($catalog->toArray(), 'Каталог успешно изменен');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Catalog  $catalog
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Catalog $catalog)
-    {
-        $catalog->delete();
-        return $this->sendResponse($catalog->toArray(), 'Каталог удален');
-    }
 }

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\PropertiesLists;
-use App\Models\Property;
-use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\Product;
+use App\Models\PropertiesLists;
+use Illuminate\Http\Request;
 use Validator;
 
 
@@ -22,13 +21,10 @@ class ProductController extends BaseController
     {
         $products = Product::paginate($paginateCount);
 
-        for($i = 0; $i < count($products);$i++){
+        for ($i = 0; $i < count($products); $i++) {
             $products[$i]->properties;
             $products[$i]->catalogs;
         }
-//        $test = Product::whereHas('catalogs', function ($q) use($ss) {
-//            $q->where('catalogs_id', '=', $ss);
-//        })->get();
 
         return $this->sendResponse($products->toArray(), 'Все продукты успешно получены');
     }
@@ -107,14 +103,50 @@ class ProductController extends BaseController
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * Фильтрация данных
      */
-    public function destroy(Product $product)
+    public function filter(Request $request)
     {
-        $product->delete();
-        return $this->sendResponse($product->toArray(), 'Продукт удален');
+        $reqParams = $request->all();
+
+        if (array_key_exists('properties', $reqParams)) {
+            $keys = array();
+            $values = array();
+
+            try {
+                foreach ($reqParams['properties'] as $key => $keyValue) {
+                    array_push($keys, $key);
+                    foreach ($keyValue as $value) {
+                        array_push($values, $value);
+                    }
+                }
+
+                $products = Product::whereHas('properties', function ($q) use ($keys, $values) {
+                    $q->whereIn('title', $keys);
+                    $q->whereIn('value', $values);
+                })->get();
+            }
+            catch (\Exception $exception){
+                return $this->sendError('Validation Error.', ['error'=>'Неправильно указаны данные. Пример: properties[NAME][]=VALUE']);
+            }
+
+        } else {
+            $products = Product::all();
+        }
+
+        if (array_key_exists('priceFrom', $reqParams))
+            $products = $products->where('price', '>=', $reqParams['priceFrom']);
+
+        if (array_key_exists('priceTo', $reqParams))
+            $products = $products->where('price', '<', $reqParams['priceTo']);
+
+        if (array_key_exists('count', $reqParams))
+            $products = $products->where('count', '>=', $reqParams['count']);
+
+        if (array_key_exists('q', $reqParams))
+            if($reqParams['q'] != null)
+                $products = $products->where('name', '=', $reqParams['q']);
+
+        return $this->sendResponse($products->toJson(), 'Продукты отфильтрованы');
     }
 }

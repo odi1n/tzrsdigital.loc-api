@@ -16,8 +16,8 @@ class PropertyController extends BaseController
      */
     public function index()
     {
-        $property = Property::all();
-        return $this->sendResponse($property->toArray(), 'Свойства успешно получены');
+        $properties = Property::all();
+        return $this->sendResponse($properties->toArray(), 'Все продукты успешно получены');
     }
 
     /**
@@ -30,15 +30,16 @@ class PropertyController extends BaseController
     {
         $input = $request->all();
         $validator = Validator::make($input, [
-            'title' => ['required', 'string', 'unique:properties'],
+            'title' => ['string'],
+            'value' => ['string'],
         ]);
 
         if ($validator->fails()) {
             return $this->sendError('Validation Error.', $validator->errors());
         }
 
-        $product = Property::create($input);
-        return $this->sendResponse($product->toArray(), 'Свойство успешно создано');
+        $property = Property::create($input);
+        return $this->sendResponse($property->toArray(), 'Свойство успешно добавлен');
     }
 
     /**
@@ -66,27 +67,17 @@ class PropertyController extends BaseController
     {
         $input = $request->all();
         $validator = Validator::make($input, [
-            'title' => ['string', 'unique:properties'],
+            'title' => ['string'],
+            'value' => ['string'],
         ]);
 
-        if ($validator->fails()) {
+        if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
         }
 
         $property->title = $input['title'];
+        $property->value = $input['value'];
         $property->save();
         return $this->sendResponse($property->toArray(), 'Свойство успешно изменено');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Property  $property
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Property $property)
-    {
-        $property->delete();
-        return $this->sendResponse($property->toArray(), 'Свойство удалено');
     }
 }

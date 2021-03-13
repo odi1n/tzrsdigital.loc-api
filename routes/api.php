@@ -24,7 +24,9 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('register', [RegisterController::class, 'register']);
 
 Route::middleware('auth:api')->group( function () {
+    Route::get('products/filter', [ProductController::class, 'filter']);
     Route::resource('products', ProductController::class);
+
     Route::resource('catalogs', CatalogController::class);
-    Route::resource('property', PropertyController::class);
+    Route::resource('properties', PropertyController::class);
 });
