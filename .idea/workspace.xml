@@ -11,11 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="692fe65a-a797-45d3-a2cf-25782a1e4065" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CatalogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CatalogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/PropertyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/PropertyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +185,7 @@
       <workItem from="1615375446876" duration="43259000" />
       <workItem from="1615559693497" duration="633000" />
       <workItem from="1615562488306" duration="10191000" />
-      <workItem from="1615586781822" duration="21002000" />
+      <workItem from="1615586781822" duration="21069000" />
     </task>
     <task id="LOCAL-00001" summary="еуые">
       <created>1615371322467</created>
@@ -275,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615678228870</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Поправил ошибки">
+      <created>1615678600851</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1615678600851</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +307,8 @@
     <MESSAGE value="......" />
     <MESSAGE value="Сделал свойства через manytomany" />
     <MESSAGE value="api.php - поправил ссылку propeties&#10;CatalogController.php - убрал удаление&#10;ProductController.php - добавлена фильтрация товара&#10;ProductTableSeeder.php - добавлено рандомное заполнение свойств товара&#10;PropertyController.php - привел все методы в порядок&#10;PropertyTableSeeder.php - изменил генерацию фейковых данных" />
-    <option name="LAST_COMMIT_MESSAGE" value="api.php - поправил ссылку propeties&#10;CatalogController.php - убрал удаление&#10;ProductController.php - добавлена фильтрация товара&#10;ProductTableSeeder.php - добавлено рандомное заполнение свойств товара&#10;PropertyController.php - привел все методы в порядок&#10;PropertyTableSeeder.php - изменил генерацию фейковых данных" />
+    <MESSAGE value="Поправил ошибки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправил ошибки" />
   </component>
   <component name="WindowStateProjectService">
     <state x="466" y="183" key="#Inspections" timestamp="1615500796247">
@@ -335,10 +339,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="341" y="150" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1615559679162" />
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615678230988">
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615678601795">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615678230988" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615678601795" />
     <state x="657" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615377487324">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

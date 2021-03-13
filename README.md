@@ -7,31 +7,41 @@
 ## Тестовое задание. Сделать api на laravel
 
 ### Установка/Запуск
-1. Скачать проект 
+1. Скачать проект.
 
-2. Открыть через консоль
+2. Открыть через консоль:
     ```php
     cd tzrsdigital.loc-api
     ```
 
-3. Произвести миграцию
+3. Открыть файл ***".env"*** и настроить:
+    ```php
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=laravel-api
+    DB_USERNAME=root
+    DB_PASSWORD=root
+    ```
+
+4. Произвести миграцию:
     ```php
     php artisan migrate
     ```
 
-4. Создание ключей passport
+5. Создать ключ passport:
     ```php
     php artisan passport:install
     ```
-5. Фейковые данные:
+6. Заполнить фейковыми данными для тестирования:
 
     Каталоги:
     ```php
     php artisan db:seed CatalogTableSeeder
     ```
    
-   Свойства:
-   ```php
+    Свойства:
+    ```php
     php artisan db:seed PropertyTableSeeder
     ```
    
@@ -39,11 +49,12 @@
    ```php
     php artisan db:seed ProductTableSeeder
     ```
-   
-   Сгенерировать свойства продуктов
+
+7. Запустить сервер:
    ```php
-    php artisan db:seed PropertyTableSeeder
+    php artisan serve
     ```
+
 
 ### Список запросов
 Ссылка: [http://localhost:8000/api/](http://localhost:8000/api/)
