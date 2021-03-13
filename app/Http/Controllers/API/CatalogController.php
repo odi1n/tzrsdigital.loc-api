@@ -40,11 +40,11 @@ class CatalogController extends BaseController
         ]);
 
         if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
+            return $this->sendError('Ошибка валидации.', $validator->errors());
         }
 
         $catalog = Catalog::create($input);
-        return $this->sendResponse($catalog->toArray(), 'Категория успешно добавлена');
+        return $this->sendResponse($catalog->toArray(), 'Каталог успешно добавлен');
     }
 
     /**
@@ -56,7 +56,7 @@ class CatalogController extends BaseController
     public function show(Catalog $catalog)
     {
         if (is_null($catalog) || $catalog->count() == 0) {
-            return $this->sendError('Catalog not found.');
+            return $this->sendError('Каталог не найден');
         }
         return $this->sendResponse($catalog->toArray(), 'Каталог успешно получен');
     }
@@ -79,7 +79,7 @@ class CatalogController extends BaseController
             ],
         ]);
         if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
+            return $this->sendError('Ошибка валидации.', $validator->errors());
         }
         $catalog->title = $input['title'];
         $catalog->save();

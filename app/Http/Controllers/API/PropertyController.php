@@ -35,11 +35,11 @@ class PropertyController extends BaseController
         ]);
 
         if ($validator->fails()) {
-            return $this->sendError('Validation Error.', $validator->errors());
+            return $this->sendError('Ошибка валидации.', $validator->errors());
         }
 
         $property = Property::create($input);
-        return $this->sendResponse($property->toArray(), 'Свойство успешно добавлен');
+        return $this->sendResponse($property->toArray(), 'Свойство успешно добавлено');
     }
 
     /**
@@ -51,7 +51,7 @@ class PropertyController extends BaseController
     public function show(Property $property)
     {
         if (is_null($property) || $property->count() == 0) {
-            return $this->sendError('Catalog not found.');
+            return $this->sendError('Свойство не найдено');
         }
         return $this->sendResponse($property->toArray(), 'Свойство успешно получено');
     }
@@ -72,7 +72,7 @@ class PropertyController extends BaseController
         ]);
 
         if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
+            return $this->sendError('Ошибка валидации.', $validator->errors());
         }
 
         $property->title = $input['title'];

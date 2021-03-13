@@ -47,7 +47,7 @@ class ProductController extends BaseController
         ]);
 
         if ($validator->fails()) {
-            return $this->sendError('Validation Error.', $validator->errors());
+            return $this->sendError('Ошибка валидации.', $validator->errors());
         }
 
         $product = Product::create($input);
@@ -64,7 +64,7 @@ class ProductController extends BaseController
     {
         $product = Product::find($id);
         if (is_null($product)) {
-            return $this->sendError('Product not found.');
+            return $this->sendError('Продукт не найден');
         }
         $product->properties;
         $product->catalogs;
@@ -90,7 +90,7 @@ class ProductController extends BaseController
         ]);
 
         if ($validator->fails()) {
-            return $this->sendError('Validation Error.', $validator->errors());
+            return $this->sendError('Ошибка валидации.', $validator->errors());
         }
 
         $product->name = $input['name'];
@@ -127,7 +127,7 @@ class ProductController extends BaseController
                 })->get();
             }
             catch (\Exception $exception){
-                return $this->sendError('Validation Error.', ['error'=>'Неправильно указаны данные. Пример: properties[NAME][]=VALUE']);
+                return $this->sendError('Ошибка валидации.', ['error'=>'Неправильно указаны данные. Пример: properties[NAME][]=VALUE']);
             }
 
         } else {

@@ -19,34 +19,18 @@ class RegisterController extends BaseController
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'last_name' => ['required',
-                'string',
-                'max:50'],
-            'first_name' => ['required',
-                'string',
-                'max:50'],
-            'patronymic' => ['required',
-                'string',
-                'max:50'],
-            'email' => ['required',
-                'string',
-                'email',
-                'unique:users'],
-            'phone' => ['required',
-                'string',
-                'regex:/\+7[0-9]{10}/',
-                'max:12',
-                'unique:users'],
-            'password' => ['required',
-                'string',
-                'min:6',
+            'last_name' => ['required', 'string', 'max:50'],
+            'first_name' => ['required', 'string', 'max:50'],
+            'patronymic' => ['required', 'string', 'max:50'],
+            'email' => ['required', 'string', 'email', 'unique:users'],
+            'phone' => ['required', 'string', 'regex:/\+7[0-9]{10}/', 'max:12', 'unique:users'],
+            'password' => ['required', 'string', 'min:6',
                 'regex:/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/'],
-            'password_confirm' => [
-                'min:6']
+            'password_confirm' => ['min:6']
         ]);
 
         if ($validator->fails()) {
-            return $this->sendError('Validation Error.', $validator->errors());
+            return $this->sendError('Ошибка валидации.', $validator->errors());
         }
 
         $input = $request->all();
@@ -56,6 +40,6 @@ class RegisterController extends BaseController
         $success['token'] = $user->createToken('MyApp')->accessToken;
         $success['name'] = $user->name;
 
-        return $this->sendResponse($success, 'User register successfully.');
+        return $this->sendResponse($success, 'Пользователь успешно зарегистрировался.');
     }
 }
