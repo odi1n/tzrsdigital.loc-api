@@ -147,6 +147,6 @@ class ProductController extends BaseController
             if($reqParams['q'] != null)
                 $products = $products->where('name', '=', $reqParams['q']);
 
-        return $this->sendResponse($products->toJson(), 'Продукты отфильтрованы');
+        return $this->sendResponse($products->toArray(), 'Продукты отфильтрованы');
     }
 }
